@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
     "files.associations": {
-        "regex": "cpp"
+        "regex": "cpp",
+        "string": "cpp"
     }
 }

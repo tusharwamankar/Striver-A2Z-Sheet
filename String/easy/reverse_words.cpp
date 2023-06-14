@@ -1,23 +1,29 @@
-#include <bits/stdc++.h>
-using namespace std;
-class Solution
-{
+class Solution {
 public:
-    string reverseWords(string s)
-    {
+    string reverseWords(string s) {
+        vector<string> v;
         int n = s.length();
-        vector<string> str;
-        string S = "";
-        for (int i = 0; i < n; ++i)
+        for(int i=0; i<n; ++i)
         {
-            if (s[i] != ' ')
+            string str="";
+            if(s[i] != ' ' && i<n)
             {
+                while(s[i] != ' ' && i<n)
+                {
+                    str.push_back(s[i]);
+                    i++;
+                }
+                v.push_back(str);
             }
         }
+        string ans = "";
+        n = v.size();
+        for(int i=0; i<n; ++i)
+        {
+            ans+= v[n-i-1];
+            ans+=' ';
+        }
+        ans.pop_back();
+        return ans;
     }
 };
-
-int main()
-{
-    return 0;
-}
